@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+.about {
+  background-color: $color-white;
+  
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+      
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+    
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      
+      .about-text {
+        flex: 1;
+        
+        p {
+          font-size: 1.125rem;
+          color: $color-text-light;
+          margin-bottom: 2rem;
+          line-height: 1.8;
+          
+          @media (min-width: 768px) {
+            font-size: 1.25rem;
+          }
+        }
+      }
+      
+      .about-skills {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        
+        .skill-card {
+          padding: 1.5rem;
+          border-left: 2px solid $color-border;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            border-color: $color-text;
+            transform: translateX(10px);
+          }
+          
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+          }
+          
+          p {
+            color: $color-text-light;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@use "./variables" as *;
+
+.skills {
+  background-color: $color-bg;
+  padding: 6rem 0;
+
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 3rem;
+      }
+    }
+
+    .skills-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+
+      .filter-btn {
+        padding: 0.5rem 1.25rem;
+        background-color: transparent;
+        border: 1px solid $color-border;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        &.active {
+          background-color: $color-text;
+          color: $color-white;
+          border-color: $color-text;
+        }
+      }
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      @media (min-width: $breakpoint-sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .skill-card {
+        background-color: $color-white;
+        padding: 1.5rem;
+        border: 1px solid $color-border;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-header {
+          margin-bottom: 1rem;
+
+          .skill-name {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0;
+          }
+        }
+
+        .skill-description {
+          font-size: 0.9rem;
+          color: $color-text-light;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

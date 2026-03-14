@@ -1,0 +1,191 @@
+@use 'variables' as *;
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+
+    &.reversed {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .project-image {
+    flex: 2;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9; // Fixed aspect ratio for all project images
+    border-radius: 4px; // Optional: slight rounding of corners
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); // Subtle shadow for depth
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // This ensures the image covers the container while maintaining aspect ratio
+      object-position: center; // Centers the image within the container
+      transition: all 0.7s ease;
+      filter: grayscale(20%);
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+
+    // YouTube link styling
+    .youtube-link {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .youtube-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        color: white;
+
+        .youtube-icon {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 10px;
+          color: white;
+        }
+
+        span {
+          font-size: 0.9rem;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      &:hover .youtube-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .project-details {
+    flex: 1;
+
+    .project-number {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: $color-text-light;
+      letter-spacing: 0.1em;
+    }
+
+    .project-title {
+      font-size: 1.75rem;
+      font-weight: 300;
+      margin: 0.5rem 0 1rem;
+      transition: transform 0.3s ease;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 2rem;
+      }
+    }
+
+    .project-description {
+      color: $color-text-light;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        background-color: #f0f0f0;
+        border-radius: 20px; // Rounded tag appearance
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #e0e0e0;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .project-title {
+      transform: translateX(10px);
+    }
+  }
+
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 4px;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #111;
+  border-bottom: 1px solid #111;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

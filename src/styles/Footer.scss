@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.footer {
+  background-color: $color-bg;
+  padding: 2rem 0;
+  border-top: 1px solid $color-border;
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    
+    p {
+      font-size: 0.875rem;
+      color: $color-text-light;
+    }
+  }
+}

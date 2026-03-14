@@ -1,0 +1,86 @@
+@use 'variables' as *;
+
+.contact {
+  background-color: $color-white;
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+    
+    .contact-content {
+      display: flex;
+      justify-content: center;
+      
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        width: 100%;
+        max-width: 1000px;
+        
+        @media (min-width: 768px) {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 2rem;
+        }
+        
+        .info-item {
+          text-align: center;
+          
+          h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: $color-text;
+          }
+          
+          a, p {
+            font-size: 1rem;
+            color: $color-text-light;
+            line-height: 1.5;
+            
+            @media (min-width: 768px) {
+              font-size: 0.9rem;
+            }
+          }
+          
+          .underline-link {
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background-color: $color-text;
+              transition: width 0.3s ease;
+            }
+            
+            &:hover {
+              color: $color-text;
+              
+              &:after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

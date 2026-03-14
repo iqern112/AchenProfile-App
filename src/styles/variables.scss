@@ -1,0 +1,40 @@
+$font-size-base: 16px;
+
+$font-primary: 'Inter', sans-serif;
+
+$color-text: #222;
+$color-bg: #ffffff;
+
+
+// Colors
+$color-bg: #f9f9f9;
+$color-white: #ffffff;
+$color-text: #000000;
+$color-text-light: #666666;
+$color-border: #e0e0e0;
+$color-primary: #000000;
+$color-accent: #f72585;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Transitions
+$transition-fast: 0.3s ease;
+$transition-medium: 0.5s ease;
+$transition-slow: 0.7s ease;
+$transition-bezier: 0.76, 0, 0.24, 1;
+
+// Z-index
+$z-index-navigation: 1000;
+$z-index-mobile-menu: 1050;
+$z-index-cursor: 9999;
