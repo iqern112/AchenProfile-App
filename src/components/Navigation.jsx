@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/navigation.scss";
+import "../styles/Navigation.scss";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
