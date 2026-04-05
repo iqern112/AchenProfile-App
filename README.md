@@ -44,7 +44,7 @@ npm run lint      # ตรวจสอบ code ด้วย ESLint
 
 ## 🌐 Demo
 
-> 🔗 [ดูเว็บไซต์จริง]([https://your-live-url.com](https://achen-profile-app.vercel.app/)) ← *(อัปเดต URL หลัง deploy)*
+https://achen-profile-app.vercel.app/
 
 ---
 
